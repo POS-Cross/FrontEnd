@@ -1,0 +1,145 @@
+<div class="card mb-5 mb-xl-10">
+  <div
+    class="card-header border-0 cursor-pointer"
+    role="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#kt_account_profile_details"
+    aria-expanded="true"
+    aria-controls="kt_account_profile_details"
+  >
+    <div class="card-title m-0">
+      <h3 class="fw-bolder m-0">Recommendation Critiria</h3>
+    </div>
+  </div>
+  <div id="kt_account_profile_details" class="mx-auto mw-600px w-100 pt-15 pb-10">
+    
+    <div [formGroup]="recommendationForm" class="form" >
+      <div class="card-body border-top p-9">
+       
+       
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label required fw-bold fs-6"
+            >Target Items List</label
+          >
+          <div class="col-lg-8 fv-row">
+            <select
+              formControlName="itemsList"
+              class="form-select form-select-solid form-select-lg"
+              name="itemsList"
+            >
+              
+              <option value="Ramadan">Ramadan items</option>
+              <option value="Shcool">Back to Shcool items</option>
+              
+              
+            </select>
+            <div class="form-text">
+              Please select one of Items List to build Offer based on it.
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mb-6">
+          <label class="d-flex align-items-center form-label mb-3"
+            >Bundle Size<i
+              class="fas fa-exclamation-circle ms-2 fs-7"
+              ngbTooltip="Provide your team size to help us setup your billing"
+            ></i
+          ></label>
+          <div class="row mb-2" data-kt-buttons="true">
+            <div class="col">
+              <input
+                formControlName="bundleSize"
+                type="radio"
+                class="btn-check"
+                id="kt_account_team_size_select_1"
+                value="2"
+              /><label
+                class="
+                  btn btn-outline btn-outline-dashed btn-outline-default
+                  w-100
+                  p-4
+                "
+                for="kt_account_team_size_select_1"
+                ><span class="fw-bolder fs-3">Up to 2</span></label
+              >
+            </div>
+            <div class="col">
+              <input
+                formControlName="bundleSize"
+                type="radio"
+                class="btn-check"
+                id="kt_account_team_size_select_2"
+                value="3"
+              /><label
+                class="
+                  btn btn-outline btn-outline-dashed btn-outline-default
+                  w-100
+                  p-4
+                "
+                for="kt_account_team_size_select_2"
+                ><span class="fw-bolder fs-3">Up to 3</span></label
+              >
+            </div>
+            <div class="col">
+              <input
+                formControlName="bundleSize"
+                type="radio"
+                class="btn-check"
+                id="kt_account_team_size_select_3"
+                value="4"
+              /><label
+                class="
+                  btn btn-outline btn-outline-dashed btn-outline-default
+                  w-100
+                  p-4
+                "
+                for="kt_account_team_size_select_3"
+                ><span class="fw-bolder fs-3">Up to 4</span></label
+              >
+            </div>
+            <div class="col">
+              <input
+                formControlName="bundleSize"
+                type="radio"
+                class="btn-check"
+                id="kt_account_team_size_select_4"
+                value="5"
+              /><label
+                class="
+                  btn btn-outline btn-outline-dashed btn-outline-default
+                  w-100
+                  p-4
+                "
+                for="kt_account_team_size_select_4"
+                ><span class="fw-bolder fs-3">Up to 5</span></label
+              >
+            </div>
+          </div>
+          <div class="form-text">
+            Customers will see this shortened version of your statement descriptor
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer d-flex justify-content-end py-6 px-9">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="isLoading"
+          (click)="saveSettings()"
+        >
+          <ng-container *ngIf="!isLoading">Build Recommendation</ng-container>
+          <ng-container *ngIf="isLoading">
+            <span clas="indicator-progress" [style.display]="'block'">
+              Please wait...{{ " " }}
+              <span
+                class="spinner-border spinner-border-sm align-middle ms-2"
+              ></span>
+            </span>
+          </ng-container>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

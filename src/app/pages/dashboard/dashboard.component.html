@@ -1,0 +1,65 @@
+<!-- begin::Row -->
+<div class="row gy-5 g-xl-8">
+  {{results }}
+  <div class="col-xl-8">
+      <app-mixed-widget11
+        class="card card-xxl-stretch mb-xl-8"
+        chartColor="primary"
+        chartHeight="300px"
+        [SalesData]="SalesData"
+      ></app-mixed-widget11>
+    </div>
+    <div class="col-xl-4">
+      <app-charts-widget9
+        [series]="OrderTimeData"    
+        [updateSeriesFn]="updateSeries"   
+        class="card card-xl-stretch mb-xl-8"
+        color="success"
+        change="+100"
+        title="Daily Sales"
+        description="Your Weekly Sales Chart"
+      ></app-charts-widget9>
+    </div>
+  </div>
+<!-- end::Row -->
+
+<!-- begin::Row -->
+<div class="row gy-5 gx-xl-4">
+  <div class="col-xl-4">
+      <app-charts-widget10 
+      [Top5DepartmentData]="Top5DepartmentData"    
+      class="card card-xl-stretch mb-xl-8">
+        
+      </app-charts-widget10>
+    </div>
+  
+  <div class="col-xxl-4">
+      <app-custom-mixed-widget1
+      color="primary"
+      title="Top Items Sales"
+      [items]="items"
+      class="card card-xl-stretch mb-xl-8"
+      ></app-custom-mixed-widget1>
+      
+  </div>
+  <!--
+  <div class="col-xxl-4">
+    <app-mixed-widget1
+    color="primary"
+    title="Top Items Sales"
+    class="card card-xl-stretch mb-xl-8"
+    ></app-mixed-widget1>
+    
+</div>
+-->
+  
+  <div class="col-xl-4">
+      <app-charts-widget3 
+      [DailyOrdersData]="DailyOrdersData"
+      class="card card-xl-stretch mb-xl-8">
+        
+      </app-charts-widget3>
+  </div>
+</div>
+<!-- end::Row -->
+

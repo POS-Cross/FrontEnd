@@ -1,0 +1,43 @@
+<div class="card-header border-0 pt-5">
+  <h3 class="card-title align-items-start flex-column">
+    <span class="card-label fw-bolder fs-3 mb-1">Orders Time</span>
+
+    <span class="text-muted fw-bold fs-7">Most time customers bought</span>
+  </h3>
+  <div class="card-toolbar" data-kt-buttons="true">
+    <a
+      (click)="updateSeries()"
+      class="
+        btn btn-sm btn-color-muted btn-active btn-active-primary
+        active
+        px-4
+        me-1
+      "
+      id="kt_charts_widget_9_Update_btn"
+    >
+    Update
+    </a>
+  </div>
+</div>
+<!-- end::Header -->
+
+<!-- begin::Body -->
+<div class="card-body">
+  <!-- begin::Chart -->
+  <div
+    #chartRef
+    id="kt_charts_widget_9_chart"
+    class="card-rounded-bottom"
+  >
+  <apx-chart
+  
+  [series]="chartOptions.series"
+  [chart]="chartOptions.chart"
+  [labels]="chartOptions.labels"
+  [colors]="chartOptions.colors"
+  [legend]="chartOptions.legend"
+  [responsive]="chartOptions.responsive"
+></apx-chart>
+  </div>
+  <!-- end::Chart -->
+</div>

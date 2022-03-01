@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "https://recommender-bravo.herokuapp.com",
+      "secure": false,
+      "pathRewrite": {"^/api" : ""}
+    }
+  }
